@@ -1,0 +1,143 @@
+/* ============================================
+   CRM4Retail — Страница "Кейсы"
+   Стили для cases.php
+   ============================================ */
+
+/* Полноформатные карточки кейсов */
+.case-full {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.case-full__left {
+  padding: 48px;
+  border-right: 1px solid var(--clr-border);
+}
+
+.case-full__right {
+  padding: 48px;
+  background: var(--clr-surface2);
+}
+
+/* Заголовок кейса с иконкой */
+.case-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.case-header__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.case-header__category {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 4px;
+}
+.case-header__name {
+  font-size: 22px;
+  font-weight: 800;
+}
+.case-header__location {
+  font-size: 13px;
+  color: var(--clr-text-muted);
+}
+
+/* Описание кейса */
+.case-desc {
+  color: var(--clr-text-2);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+/* Список выполненных работ */
+.case-what-done {
+  margin-bottom: 28px;
+}
+.case-what-done__title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--clr-text);
+  margin-bottom: 16px;
+}
+.case-what-done__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.case-what-done__list li {
+  font-size: 14px;
+  color: var(--clr-text-2);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+/* Блок результатов */
+.case-results {
+  margin-bottom: 32px;
+}
+.case-results__title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--clr-text);
+  margin-bottom: 20px;
+}
+.case-results__item {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  margin-bottom: 12px;
+}
+.case-results__item:last-child { margin-bottom: 0; }
+
+/* Срок внедрения */
+.case-period {
+  padding: 16px 20px;
+  border: 1px solid;
+  border-radius: var(--radius);
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+.case-period strong {
+  font-weight: 700;
+}
+
+/* Кнопка в карточке */
+.case-full__right .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .case-full {
+    grid-template-columns: 1fr !important;
+  }
+  .case-full__left {
+    border-right: none !important;
+    border-bottom: 1px solid var(--clr-border);
+    padding: 32px;
+  }
+  .case-full__right {
+    padding: 32px;
+  }
+  .case-header {
+    flex-wrap: wrap;
+  }
+}

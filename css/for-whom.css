@@ -1,0 +1,157 @@
+/* ============================================
+   CRM4Retail — Страница "Для кого"
+   Специфичные стили для for-whom.php
+   ============================================ */
+
+/* Сетка для блоков на странице */
+.for-whom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  margin-bottom: 96px;
+}
+.for-whom-grid:last-child { margin-bottom: 0; }
+
+/* Блок с результатами (левая часть) */
+.results-block {
+  background: var(--clr-surface2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+}
+.results-block__title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--clr-text-muted);
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.results-block__item {
+  margin-bottom: 16px;
+}
+.results-block__item-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--clr-text-muted);
+  margin-bottom: 6px;
+}
+.results-block__item-value {
+  font-weight: 700;
+  color: var(--clr-accent);
+}
+.results-block__bar {
+  height: 6px;
+  background: var(--clr-border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.results-block__bar-fill {
+  height: 100%;
+  background: var(--clr-accent);
+  border-radius: 3px;
+  transition: width 1s;
+}
+
+/* Специфичные стили для блока управления сетью (тёмный) */
+.dark-block {
+  background: var(--clr-text);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  color: #fff;
+}
+.dark-block__title {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.dark-block__card {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.1);
+  margin-bottom: 12px;
+}
+.dark-block__card:last-child { margin-bottom: 0; }
+.dark-block__card-icon { font-size: 24px; flex-shrink: 0; }
+.dark-block__card-title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+.dark-block__card-desc { font-size: 13px; color: rgba(255,255,255,.6); }
+
+/* Блок структуры доступа для франшиз */
+.access-structure {
+  background: var(--clr-accent-lt);
+  border: 1px solid rgba(37,99,235,.2);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+}
+.access-structure__title {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: var(--clr-accent);
+}
+.access-structure__item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  background: #fff;
+  border-radius: var(--radius);
+  border-left: 3px solid var(--clr-accent);
+  margin-bottom: 12px;
+}
+.access-structure__item:last-child { margin-bottom: 0; }
+.access-structure__item-icon { font-size: 18px; }
+.access-structure__item-role { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+.access-structure__item-desc { font-size: 12px; color: var(--clr-text-muted); }
+
+/* Стили для списка с галочками */
+.check-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+.check-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 15px;
+  color: var(--clr-text-2);
+}
+.check-list li::before {
+  content: '✓';
+  width: 22px;
+  height: 22px;
+  background: var(--clr-accent-lt);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-accent);
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .for-whom-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+  }
+  .for-whom-grid > div { order: unset !important; }
+  .dark-block { padding: 28px; }
+  .results-block { padding: 28px; }
+}

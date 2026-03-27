@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /php/
+Disallow: /php/config.php
+Disallow: /php/database.sql
+
+Sitemap: https://k.filipp.su/sitemap.xml
+

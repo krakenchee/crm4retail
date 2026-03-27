@@ -1,0 +1,204 @@
+/* ============================================
+   CRM4Retail — Страница "Цены"
+   Тарифы и квиз для pricing.php
+   ============================================ */
+
+/* Тарифные карточки */
+.pricing-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.pricing-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  text-align: center;
+  transition: all var(--transition-slow);
+  position: relative;
+}
+.pricing-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+.pricing-card--popular {
+  background: var(--clr-accent);
+  border-color: var(--clr-accent);
+  transform: scale(1.04);
+  position: relative;
+}
+.pricing-card--popular .pricing-card__tag {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--clr-warn);
+  color: #fff;
+  padding: 4px 16px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.pricing-card--popular .pricing-card__category {
+  color: rgba(255,255,255,.7);
+}
+.pricing-card--popular .pricing-card__price {
+  color: #fff;
+}
+.pricing-card--popular .pricing-card__period {
+  color: rgba(255,255,255,.65);
+}
+.pricing-card--popular .pricing-card__features li {
+  color: rgba(255,255,255,.85);
+}
+.pricing-card__category {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--clr-text-muted);
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.pricing-card__price {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -.04em;
+  color: var(--clr-text);
+}
+.pricing-card__period {
+  color: var(--clr-text-muted);
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+.pricing-card__features {
+  list-style: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.pricing-card__features li {
+  font-size: 14px;
+  color: var(--clr-text-2);
+  display: flex;
+  gap: 10px;
+}
+.pricing-card__features li::before {
+  content: '✓';
+  color: var(--clr-success);
+  font-weight: 700;
+}
+.pricing-card--popular .pricing-card__features li::before {
+  color: rgba(255,255,255,.9);
+}
+.pricing-card .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Квиз */
+.quiz {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  max-width: 680px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+}
+.quiz__progress {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 40px;
+}
+.quiz__progress-step {
+  flex: 1;
+  height: 4px;
+  background: var(--clr-border);
+  border-radius: 4px;
+  transition: background .3s;
+}
+.quiz__progress-step.done { background: var(--clr-accent); }
+.quiz__progress-step.active { background: var(--clr-accent-2); }
+.quiz__step { display: none; }
+.quiz__step.active { display: block; }
+.quiz__step-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--clr-text-muted);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.quiz__step h3 { font-size: 22px; margin-bottom: 28px; }
+.quiz__options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.quiz__option {
+  padding: 16px 20px;
+  border: 1.5px solid var(--clr-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-size: 14px;
+  font-weight: 500;
+  background: var(--clr-surface);
+  text-align: left;
+}
+.quiz__option:hover {
+  border-color: var(--clr-accent);
+  color: var(--clr-accent);
+  background: var(--clr-accent-lt);
+}
+.quiz__option.selected {
+  border-color: var(--clr-accent);
+  background: var(--clr-accent-lt);
+  color: var(--clr-accent);
+}
+.quiz__nav {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+.quiz__info {
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--clr-text-muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .pricing-tiers {
+    grid-template-columns: 1fr !important;
+  }
+  .pricing-card--popular {
+    transform: scale(1);
+  }
+}
+@media (max-width: 600px) {
+  .quiz {
+    padding: 28px 24px;
+  }
+  .quiz__options {
+    grid-template-columns: 1fr;
+  }
+  .quiz__nav {
+    flex-direction: column;
+  }
+  .quiz__nav .btn {
+    justify-content: center;
+    white-space: normal;
+  }
+  .btn-quiz-prev[style*="visibility:hidden"] {
+    display: none !important;
+  }
+}
