@@ -14,7 +14,7 @@ require_once 'php/header.php';
       <!-- Content -->
       <div class="hero__content">
         <h1 class="display fade-up">
-          CRM для роста ..<br>продаж в <span class="accent">рознице</span>
+          CRM для роста<br>продаж в <span class="accent">рознице</span>
         </h1>
         <p class="hero__sub fade-up">
           CRM4Retail анализирует покупки клиентов и помогает продавцам продавать больше — автоматически.
