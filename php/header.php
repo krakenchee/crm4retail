@@ -9,6 +9,7 @@ $currentPage = $currentPage ?? '';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#2563EB">
+  <meta name="robots" content="noindex, nofollow">
 
   <title><?= htmlspecialchars($pageTitle ?? 'CRM4Retail — CRM для роста продаж в рознице') ?></title>
   <meta name="description" content="<?= htmlspecialchars($pageDesc ?? 'CRM4Retail — система управления клиентами для розничных магазинов. Сегментация, бонусная программа, автоматические акции и подсказки кассирам.') ?>">
